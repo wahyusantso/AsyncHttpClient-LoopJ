@@ -5,10 +5,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 class MainViewModel: ViewModel() {
@@ -55,5 +57,11 @@ class MainViewModel: ViewModel() {
                 Log.d("MainViewModel", errorMessage)
             }
         })
+    }
+
+    init {
+        viewModelScope.launch {
+            getQuote()
+        }
     }
 }

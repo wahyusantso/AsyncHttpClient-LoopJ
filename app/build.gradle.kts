@@ -69,7 +69,10 @@ dependencies {
     //constraint layout
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
     //viewmodel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
     //LoopJ
     implementation("com.loopj.android:android-async-http:1.4.9")
+    //coroutine
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 }
